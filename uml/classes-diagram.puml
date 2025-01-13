@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface JpaRepository
+interface CustomerRepository
+interface CustomerService
+
+' extends
+JpaRepository <|-- CustomerRepository
+' depends
+CustomerRepository ..> Customer : uses
+CustomerServiceImpl ..|> CustomerService : implements
+CustomerController --> CustomerServiceImpl : depends on
+
+@enduml

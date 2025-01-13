@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+CustomerController -> CustomerService: getCustomer
+CustomerService -> CustomerRepository : query by CustomerId
+CustomerService <-- CustomerRepository: optional Customer response
+CustomerController <-- CustomerService: Customer or null response
+
+@enduml
